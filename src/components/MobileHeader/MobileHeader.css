@@ -1,0 +1,29 @@
+.--header-elem{
+    position: fixed;
+    width: 100%;
+    background-color: var(--main-bg-color);
+}
+
+.--header-logo{
+    width: 70px;
+}
+
+.--header-logo-container.mobile{
+    flex-grow:2;
+    margin-right:var(--sixteenPX);
+}
+
+.--header-logo{
+    margin-left:var(--fourtyeightPX);
+}
+
+.--header-list-icon{
+    margin:0 var(--sixteenPX) 0 auto;
+    width:40px;
+    height:40px;
+}
+
+.--header-nav-ul{
+    list-style-type:none;
+    margin:var(--sixteenPX) 0 var(--sixteenPX) auto;
+}

@@ -1,0 +1,4 @@
+.--header-logo-container.desktop{
+    flex-grow:2;
+    margin-right:var(--fourtyeightPX);
+}
