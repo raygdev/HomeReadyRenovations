@@ -1,3 +1,26 @@
-.--layout-header{
-   padding-top:200px;
+.--layout-aside-container{
+   margin-top:4.625rem;
+   position: fixed;
+   width:4.375rem;
+}
+
+.--layout-aside-content-container{
+   height:90.375vh;
+}
+
+.--layout-current-nav{
+   transform: rotate(-90deg);
+}
+
+.--layout-aside-social-container{
+   
+   margin-top:auto;
+}
+.--layout-aside-social-list{
+   all: unset;
+   list-style-type: none;
+}
+
+.--layout-section-container{
+   margin:4.375rem 0 0 4.375rem;
 }
