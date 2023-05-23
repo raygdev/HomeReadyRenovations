@@ -1,29 +1,27 @@
 .--header-elem{
-    position: fixed;
-    width: 100%;
-    background-color: var(--main-bg-color);
+    position:fixed;
+    width:100%;
+    background-color:whitesmoke;
 }
 
-.--header-logo{
-    width: 70px;
+.--header-logo-container{
+    width:calc(100vw - 4.5rem);
+    height:4.5rem;
 }
 
-.--header-logo-container.mobile{
-    flex-grow:2;
-    margin-right:var(--sixteenPX);
-}
-
-.--header-logo{
-    margin-left:var(--fourtyeightPX);
+img#header-logo{
+    width:4.5rem;
+    margin-left:4.5rem;
 }
 
 .--header-list-icon{
-    margin:0 var(--sixteenPX) 0 auto;
-    width:40px;
-    height:40px;
+    margin-left:auto;
+    width:2rem;
+    height:2rem;
+    margin-right:var(--twentyPX);
 }
 
 .--header-nav-ul{
-    list-style-type:none;
-    margin:var(--sixteenPX) 0 var(--sixteenPX) auto;
+    margin:1rem 0 1rem auto;
+    gap:.5rem;
 }

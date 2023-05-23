@@ -1,142 +1,118 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;500;600;700;800&family=Merriweather:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Inter:wght@400;700&display=swap');
 
-:root{
-    --primary-font:'Merriweather Sans', sans-serif;
-    --primary-900:'Merriweather', serif;
-    --ebony:#576748;
-    --sunglow:#FACF59;
-    --verdigris:#3EA8A7;
-    --lapis-lazuli:#3D5F98;
-    --true-blue:#416AA4;
-    --red:#FF0000;
-    --slate:#46494C;
-    --main-bg-color:#FFF;
-    --black:#161616;
-    --white:#FFFDFA;
-    --grey:#4D4D4D;
-    --fivePX:.3125rem;
-    --fourteenPX:.875rem;
-    --sixteenPX:1rem;
-    --eighteenPX:1.125rem;
-    --twentyPX:1.25rem;
-    --twentyfourPX:1.5rem;
-    --twentysixPX:1.625rem;
-    --thirtytwoPX:2rem;
-    --thirtysixPX:2.25rem;
-    --fourtyeightPX:3rem;
-    --seventytwoPX:4.5rem;
-    font-size:16px;
-    font-family: var(--primary-font);
-    color:var(--black);
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    fill:currentColor;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-*, *::before, *::after{
+*,*::before, *::after{
     box-sizing: border-box;
 }
 
-html, body{
-  margin:0;
-  padding:0;
-  background-color: whitesmoke;
+:root{
+    font-size:16px;
+    font-family:'Inter', sans-serif;
+    --primary-font:'Inter', sans-serif;
+    --concert-font:'Concert One', cursive;
+    --ebony:#576748;
+    --sunglow:#FACF59;
+    --black:#161616;
+    --white:#FFF;
+    --grey:#c2c2c2;
+    --twelvePX:.75rem;
+    --twentyPX:1.25rem;
 }
 
-/*Font-size*/
-.XIVpt{font-size:var(--fourteenPX)}
-.XVIpt{font-size:var(--sixteenPX)}
-.XVIIIpt{font-size:var(--eighteenPX)}
-.XXpt{font-size:var(--twentyPX)}    
-.XXIVpt{font-size:var(--twentyfourPX)}
-.XXVIpt{font-size:var(--twentysixPX)}
-.XXXIIpt{font-size:var(--thirtytwoPX)}
-.XXXVIpt{font-size:var(--thirtysixPX)} 
-.XLVIIIpt{font-size:var(--fourtyeightPX)}
-
-/*Font-Weight*/
-.regular{font-weight:400}
-.medium{font-weight:500}
-.semi-bold{font-weight: 600}
-.bold{font-weight:700}
-.extra-bold{font-weight:800}
-.black-bold{font-weight:900}
-
-/*Color*/
 .black{color:var(--black)}
 .white{color:var(--white)}
 .grey{color:var(--grey)}
-.red{color:var(--red)}
 
-.limit-width{
-    max-width:56.25rem;
-    margin:0 auto;
-}
-.block{display:block;}
-.underline{text-decoration: underline}
-.no-underline{text-decoration: none}
-.center{text-align: center}
-.push-right{margin-left:auto}
-.push-left{margin-right:auto}
+.center{text-align: center;}
 
-/*Quick Flex Props*/
 .flex{display:flex;}
-.flex-wrap{flex-wrap:wrap}
-.flex-center{justify-content: center}
-.flex-align-center{align-items: center}
-.flex-column{flex-direction: column}
+.flex-column{flex-direction: column;}
+.flex-wrap{flex-wrap: wrap;}
+.flex-align-center{align-items: center;}
 
-.nav-link, 
 .link{
-    text-decoration:none;
-    margin-right:var(--fourteenPX);
+    cursor: pointer;
+}
+
+.link.mobile{
+    font-family:var(--primary-font);
     color:var(--black);
+    text-decoration:none;
+}
+
+.link.mobile:hover{
+    color:var(--ebony);
+    font-size:700;
+    text-decoration: underline;
 }
 
 .link.desktop{
-    font-weight:700;
-    text-shadow:0 2px 3px var(--white);
+    font-family:var(--primary-font);
+    color:var(--white);
+    font-weight: 700;
+    text-decoration:none;
 }
 
-a.nav-link:hover:not(.active):not(.--login-new){
-    color:var(--sunglow);
-    text-shadow: 0 2px 3px var(--black);
-}
-
-a.link.mobile:hover{
-    color:var(--ebony);
-    /* text-shadow:0 2px 3px var(--true-blue); */
+.link.desktop:hover{
+    color:var(--black);
+    font-size:700;
     text-decoration: underline;
 }
 
-a.link.desktop:hover{
-    color:var(--white);
-    font-weight:700;
-    text-shadow:0 2px 3px var(--black);
-    text-decoration: underline;
+footer{
+    background-color:blue;
 }
 
-.btn{
-    display:block;
-    padding:var(--sixteenPX);
-    border-radius:.3125rem;
-    text-decoration: none;
-    font-family:var(--primary-900);
-    color:var(--white);
-    box-shadow:1px 2px 10px var(--white);
-}
 
-.btn:hover{
-    background-color:var(--carribbean-green);
-}
-
-.block-input{
-    width:100%;
-}
-
-input{
-    border-radius:unset;
-}
-
-#root {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+img:not(.social-icon){
+    width:32px;
 }

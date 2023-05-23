@@ -1,4 +1,3 @@
-.--header-logo-container.desktop{
-    flex-grow:2;
-    margin-right:var(--fourtyeightPX);
+.--header-nav-ul.desktop{
+    margin-right:2rem;
 }

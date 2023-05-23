@@ -23,7 +23,7 @@ const MobileHeader = ()=>{
         <header className='--header-elem'>
             <div className='--header-sticky-container flex flex-align-center'>
                 <div className='--header-logo-container mobile' style={logoContainerStyles}>
-                    <img className='--header-logo' src={Logo} alt="" />
+                    <img id='header-logo' className='--header-logo' src={Logo} alt="" />
                 </div>
                 <BsList className='--header-list-icon' onClick={handleCollapse}/>          
             </div>

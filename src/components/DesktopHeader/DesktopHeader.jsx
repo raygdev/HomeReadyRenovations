@@ -14,8 +14,8 @@ const DesktopHeader = ()=>{
         <header className='--header-elem'>
             <div className='--header-sticky-container flex flex-align-center'>
                 <div className='--header-logo-container desktop flex flex-align-center' style={logoContainerStyles}>
-                    <img className='--header-logo' src={Logo} alt="" />
-                    <ul className='--header-nav-ul flex'>
+                    <img id='header-logo' className='--header-logo' src={Logo} alt="" />
+                    <ul className='--header-nav-ul desktop flex'>
                         <a className='link desktop' href='#home'><li>Home</li></a>
                         <a className='link desktop' href='#AboutUs'><li>About Us</li></a>
                         <a className='link desktop' href='#OurWork'><li>Our Work</li></a>
