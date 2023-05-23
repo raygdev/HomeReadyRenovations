@@ -6,8 +6,13 @@ import youtubeIcon from '../../assets/icons/youtube.svg'
 import { Outlet, Link } from 'react-router-dom'
 import MobileHeader from '../../components/MobileHeader/MobileHeader'
 import DesktopHeader from '../../components/DesktopHeader/DesktopHeader'
+import AboutUs from '../../components/About/About'
+import Jumbo from '../../components/Jumbo/Jumbo'
+import WorkMobile from '../../components/WorkMobile/WorkMobile'
+import WorkDesktop from '../../components/WorkDesktop/WorkDesktop'
 import { useCurrentWidth } from '../../hooks/findWidth'
 import woodGrain from '../../assets/woodGrain-unsplash.jpg'
+
 import placeholder from '../../assets/placeholder.jpg'
 import './Layout.css'
 
@@ -45,37 +50,9 @@ export const Layout = ()=> {
         <div id='scroll-container'>
           <div className='--layout-mainfooter-flex flex flex-column'>
             <main className='--layout-main-container'>
-              <section className='--layout-jumbo-section'>
-                <img id='jumbo-anim' className='--layout-jumbo-anim placeholder' src={placeholder} alt="" />
-                <h2 className='--layout-jumbo-title'>Quality Renovations for LARGE & small Homes</h2>
-                <p className='--layout-jumbo-text'>Revamp your living space with our exceptional home renovation services. We deliver functional and stylish results that increase your property value. Let's bring your vision to life!</p>
-              </section>
-              <section>
-                <img src={placeholder} className='placeholder' alt="" />
-                <h2>Tired of your <span>Home</span></h2>
-                <p>Our expert home renovation services will revitalize your living space and bring new life to your home.</p>
-                <h2><span>Ready</span> for a change?</h2>
-                <p>Our renovation services transform your home in record time without sacrificing quality</p>
-                <h2>Expect Detailed <span>Renovations</span></h2>
-                <p>Our detailed renovations enhance your home's beauty and functionality.</p>
-              </section>
-              <section>
-                <div>
-                  <img src={placeholder} className='placeholder' alt="" />
-                  <h2>Commerical Renovations</h2>
-                  <Link>View More</Link>
-                </div>
-                <div>
-                  <img src={placeholder} className='placeholder' alt="" />
-                  <h2>Interior Renovations</h2>
-                  <Link>View More</Link>
-                </div>
-                <div>
-                  <img src={placeholder} className='placeholder' alt="" />
-                  <h2>Exterior Renovations</h2>
-                  <Link>View More</Link>
-                </div>
-              </section>
+              <Jumbo/>
+              <AboutUs />
+              {width < 750 ? (<WorkMobile/>): (<WorkDesktop/>)}
               <section>
                 <h2>Testimonials speak volumes. They fuel our passion for delivering exceptional home renovations.</h2>
                 <div>

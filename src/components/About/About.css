@@ -1,0 +1,91 @@
+.--about-section-container{    
+    background-color: #BAB9B9;  
+}
+
+img#about-img{
+    width:100%;
+}
+
+.--about-text-container{
+    display:grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows:repeat(3, auto auto);
+    font-size:3vw;
+    text-shadow:0 0 3px var(--black);
+    padding:.5rem 1rem;
+}
+
+.--about-text-container>h2{
+    color:var(--sunglow);
+    padding:.5rem 0;
+}
+
+.--about-home-tag{
+    grid-column:1/2;
+    grid-row:1/2;
+    align-self: self-end;
+}
+
+.--about-home-text{
+    grid-column:1/2;
+    grid-row:2/3;
+}
+
+.--about-ready-tag{
+    grid-column:1/2;
+    grid-row:3/4;
+    align-self: self-end;
+}
+
+.--about-ready-text{
+    grid-column:1/2;
+    grid-row:4/5;
+}
+
+.--about-renovations-tag{
+    grid-column:1/2;
+    grid-row:5/6;
+    align-self: self-end;
+}
+
+.--about-renovation-text{
+    grid-column:1/2;
+    grid-row:6/7;
+}
+
+.--about-home-tag>span,
+.--about-ready-tag>span,
+.--about-renovations-tag>span{
+    text-shadow:0 0 3px var(--white);
+}
+
+.--about-home-tag>span{
+    color:var(--verdigris);
+}
+
+.--about-ready-tag>span{
+    color:var(--lapisLazuli);
+}
+
+.--about-renovations-tag>span{
+    color:var(--ebony);
+}
+
+img#about-measure-img{
+    width:100%;
+    grid-column:2/3;
+    grid-row:1/7;
+}
+
+@media (min-width:850px) {
+    .--about-section-container{
+        display:flex;
+        padding:1rem;
+        gap:.125rem;
+    }
+
+    img#about-img{
+        width:40%;
+
+    }
+}
