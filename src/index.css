@@ -71,6 +71,8 @@ table {
     --twentyPX:1.25rem;
 }
 
+.XXpt{font-size: var(--twentyPX)}
+
 .black{color:var(--black)}
 .white{color:var(--white)}
 .grey{color:var(--grey)}
@@ -116,6 +118,6 @@ footer{
 }
 
 
-img:not(.social-icon){
+/* img:not(.social-icon){
     width:32px;
-}
+} */

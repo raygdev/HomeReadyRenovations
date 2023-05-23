@@ -10,6 +10,7 @@ import AboutUs from '../../components/About/About'
 import Jumbo from '../../components/Jumbo/Jumbo'
 import WorkMobile from '../../components/WorkMobile/WorkMobile'
 import WorkDesktop from '../../components/WorkDesktop/WorkDesktop'
+import Testimonial from '../../components/Testimonial/Testimonial'
 import { useCurrentWidth } from '../../hooks/findWidth'
 import woodGrain from '../../assets/woodGrain-unsplash.jpg'
 
@@ -53,13 +54,7 @@ export const Layout = ()=> {
               <Jumbo/>
               <AboutUs />
               {width < 750 ? (<WorkMobile/>): (<WorkDesktop/>)}
-              <section>
-                <h2>Testimonials speak volumes. They fuel our passion for delivering exceptional home renovations.</h2>
-                <div>
-                  <p>Their construction company exceeded all expectations, delivering impeccable craftsmanship, outstanding service, and a truly remarkable experience.</p>
-                  <p>-Bob and Sally</p>
-                </div>
-              </section>
+              <Testimonial/>
             </main>
             <footer className='--layout-footer flex flex-wrap'>
               <p>©️2023 Home Ready Renovations</p>
