@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import fbIcon from '../../assets/icons/facebook.svg'
 import instaIcon from '../../assets/icons/instagram.svg'
 import tiktokIcon from '../../assets/icons/tiktok.svg'
@@ -17,11 +17,38 @@ export const loader = ()=>{
 
 export const Layout = ()=> {
   const width = useCurrentWidth()
+  const currentSection = useRef()
 
+  useEffect(()=>{
+    document.addEventListener('DOMContentLoaded', addObserver)
+
+    return ()=>{
+      document.removeEventListener('DOMContentLoaded', addObserver)
+    }
+  },[])
+
+  function addObserver(){
+    let options = {
+      root: document.querySelector("#root"),
+      rootMargin: '0px',
+      threshold:.01
+    }
+  
+    let observer = new IntersectionObserver(handleObserver, options)
+    console.log(observer)
+    let target = document.querySelector("#AboutUs");
+  
+    observer.observe(target)
+  }
+  
   const asideContainerStyles = {
       backgroundImage:`URL(${woodGrain})`,
       backgroundSize:'cover',
       backgroundRepeat:'no-repeat'
+  }
+
+  function handleObserver(){
+    console.log(`we have reached an observer`)
   }
   
   return(
@@ -30,7 +57,7 @@ export const Layout = ()=> {
       <div id='content-container'>
         <div className='--layout-aside-container' style={asideContainerStyles}>
           <div className='--layout-aside-content-container flex flex-column'>
-            <h2 className='--layout-current-nav white center'>About Us</h2>   
+            <h2 className='--layout-current-nav white center' ref={currentSection}>About Us</h2>   
             <div className='--layout-aside-social-container'>
               <ul className='--layout-aside-social-list flex flex-column flex-center flex-align-center'>
                 <Link><li><img className='social-icon fb' src={fbIcon} alt="facebook icon" /></li></Link>
