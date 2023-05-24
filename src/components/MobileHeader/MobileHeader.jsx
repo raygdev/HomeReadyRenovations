@@ -1,9 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
+import { genericHashLink } from 'react-router-hash-link'
 import Logo from '../../assets/Logo.png'
 import woodGrain from '../../assets/woodGrain-unsplash.jpg'
 import {BsList} from 'react-icons/bs'
 import './MobileHeader.css'
+
+const HashLink = genericHashLink(Link)
 
 const logoContainerStyles = {
     backgroundImage:`URL(${woodGrain})`,
@@ -30,10 +33,10 @@ const MobileHeader = ()=>{
             </div>
             {!navCollapsed && (<nav id='--header-nav' className='--header-nav flex'>
                 <ul className='--header-nav-ul flex'>
-                    <Link to='.#home' className='link mobile'><li>Home</li></Link>
-                    <Link to='.#AboutUs' className='link mobile'><li>AboutUs</li></Link>
-                    <Link to='.#OurWork'className='link mobile'><li>Our Work</li></Link>
-                    <Link to='.#Feedback' className='link mobile'><li>Feedback</li></Link>
+                    <HashLink to='/#Home' className='link mobile'><li>Home</li></HashLink>
+                    <HashLink to='/#AboutUs' className='link mobile'><li>AboutUs</li></HashLink>
+                    <HashLink to='/#OurWork'className='link mobile'><li>Our Work</li></HashLink>
+                    <HashLink to='/#Feedback' className='link mobile'><li>Feedback</li></HashLink>
                 </ul>
             </nav>)}
         </header>
