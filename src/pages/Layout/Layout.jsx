@@ -6,16 +6,8 @@ import youtubeIcon from '../../assets/icons/youtube.svg'
 import { Outlet, Link } from 'react-router-dom'
 import MobileHeader from '../../components/MobileHeader/MobileHeader'
 import DesktopHeader from '../../components/DesktopHeader/DesktopHeader'
-import AboutUs from '../../components/About/About'
-import Jumbo from '../../components/Jumbo/Jumbo'
-import WorkMobile from '../../components/WorkMobile/WorkMobile'
-import WorkDesktop from '../../components/WorkDesktop/WorkDesktop'
-import Testimonial from '../../components/Testimonial/Testimonial'
-import Footer from '../../components/Footer/Footer'
 import { useCurrentWidth } from '../../hooks/findWidth'
 import woodGrain from '../../assets/woodGrain-unsplash.jpg'
-import LogoWhite from '../../assets/LogoWhite.png'
-import placeholder from '../../assets/placeholder.jpg'
 import './Layout.css'
 
 
@@ -50,21 +42,7 @@ export const Layout = ()=> {
           </div>    
         </div>
         <div id='scroll-container'>
-          <div className='--layout-mainfooter-flex flex flex-column'>
-            <main className='--layout-main-container'>
-              <Jumbo/>
-              <AboutUs />
-              {width < 750 ? (<WorkMobile/>): (<WorkDesktop/>)}
-              <Testimonial/>
-            </main>
-            <footer className='--layout-footer flex flex-column'>
-              <div className='--layout-footer-img-container flex flex-center'>
-                <img className='--footer-logo-img' src={LogoWhite} alt="" />
-              </div>
-              
-              <Footer/>
-            </footer>
-          </div>
+          <Outlet width={width} />
           
         </div>   
       </div>

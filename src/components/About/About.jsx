@@ -7,7 +7,7 @@ import './About.css'
 
 const AboutUs = ()=>{
     return(
-        <section className='--about-section-container'>
+        <section id="AboutUs" className='--about-section-container'>
             <img id='about-img' className='--about-img' src={aboutUsImg} alt="" />
             <div className='--about-text-container'>
                 <h2 className='--about-home-tag'>Tired of your <span>Home</span></h2>

@@ -30,3 +30,9 @@ img#work-exterior-img{
     box-shadow: 0 2px 3px var(--black);
     max-height:2.1875rem;
 }
+
+.--work-portfolio>a:hover{
+    color:var(--black);
+    text-decoration:none;
+    text-shadow:0 0 3px var(--grey);
+}

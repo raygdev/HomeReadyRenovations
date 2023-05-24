@@ -4,7 +4,7 @@ import './Testimonial.css'
 
 const Testimonial = ()=>{
     return(
-        <section className='--testimonial-section-container '>
+        <section id='Feedback' className='--testimonial-section-container '>
             <h2 className='--testimonial-tagline black bold center'>Testimonials speak volumes. They fuel our passion for delivering exceptional home renovations.</h2>
             <div className='--testimonial-carousel-container'>
             <Carousel>
