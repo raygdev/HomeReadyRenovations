@@ -71,7 +71,7 @@ img#about-img{
     color:var(--ebony);
 }
 
-img#about-measure-img{
+#about-measure-img{
     width:100%;
     grid-column:2/3;
     grid-row:1/7;

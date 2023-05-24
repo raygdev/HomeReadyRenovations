@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
 import { Layout, loader as layoutLoader} from './pages/Layout/Layout'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
 
 const router = createBrowserRouter(createRoutesFromElements(

@@ -1,5 +1,7 @@
 import React from 'react'
 import aboutUsImg from '../../assets/AboutUs-unsplash.jpg'
+import Lottie from "lottie-react";
+import measuringTape from '../../assets/measuringTape.json'
 import placeholder from '../../assets/placeholder.jpg'
 import './About.css'
 
@@ -14,7 +16,7 @@ const AboutUs = ()=>{
                 <p className='--about-ready-text black'>Our renovation services transform your home in record time without sacrificing quality</p>
                 <h2 className='--about-renovations-tag'>Expect Detailed <span>Renovations</span></h2>
                 <p className='--about-renovation-text black'>Our detailed renovations enhance your home's beauty and functionality.</p>
-                <img id='about-measure-img' className='--about-measure-img' src={placeholder} alt="" />
+                <Lottie id='about-measure-img' className='--about-measure-img' animationData={measuringTape} loop={true} />
             </div>       
         </section>
 )

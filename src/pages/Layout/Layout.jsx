@@ -11,9 +11,10 @@ import Jumbo from '../../components/Jumbo/Jumbo'
 import WorkMobile from '../../components/WorkMobile/WorkMobile'
 import WorkDesktop from '../../components/WorkDesktop/WorkDesktop'
 import Testimonial from '../../components/Testimonial/Testimonial'
+import Footer from '../../components/Footer/Footer'
 import { useCurrentWidth } from '../../hooks/findWidth'
 import woodGrain from '../../assets/woodGrain-unsplash.jpg'
-
+import LogoWhite from '../../assets/LogoWhite.png'
 import placeholder from '../../assets/placeholder.jpg'
 import './Layout.css'
 
@@ -56,10 +57,12 @@ export const Layout = ()=> {
               {width < 750 ? (<WorkMobile/>): (<WorkDesktop/>)}
               <Testimonial/>
             </main>
-            <footer className='--layout-footer flex flex-wrap'>
-              <p>©️2023 Home Ready Renovations</p>
-              <p>(405)473-1503</p>
-              <p>makereadyreno@gmail.com</p>
+            <footer className='--layout-footer flex flex-column'>
+              <div className='--layout-footer-img-container flex flex-center'>
+                <img className='--footer-logo-img' src={LogoWhite} alt="" />
+              </div>
+              
+              <Footer/>
             </footer>
           </div>
           

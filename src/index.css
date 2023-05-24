@@ -73,15 +73,19 @@ table {
 
 .XXpt{font-size: var(--twentyPX)}
 
+.bold{font-weight:700}
+
 .black{color:var(--black)}
 .white{color:var(--white)}
 .grey{color:var(--grey)}
 
 .center{text-align: center;}
+.text-right{text-align: right;}
 
 .flex{display:flex;}
 .flex-column{flex-direction: column;}
 .flex-wrap{flex-wrap: wrap;}
+.flex-center{justify-content: center;}
 .flex-align-center{align-items: center;}
 
 .link{

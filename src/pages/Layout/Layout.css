@@ -50,4 +50,14 @@
 
 .--layout-footer{
     margin-top:auto;
+    background-color:#5F5F5F;
+    color:var(--white);
+}
+
+.--layout-footer-img-container{
+    margin-top:-2.4rem;
+}
+
+.--footer-logo-img{
+    width:4.5rem;
 }

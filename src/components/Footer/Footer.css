@@ -1,0 +1,21 @@
+.--footer-container{
+    position: relative;
+    padding:3rem 1rem 2rem;
+    gap:1rem;
+}
+
+.--footer-container>p{
+    text-shadow:0 0 3px var(--black);
+}
+
+.--footer-seperator{
+    display:none;
+}
+
+
+@media (min-width:790px) {
+ .--footer-seperator{
+    display:block;
+    font-size:.3125rem;
+ }   
+}
