@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import fbIcon from '../../assets/icons/facebook.svg'
 import instaIcon from '../../assets/icons/instagram.svg'
 import tiktokIcon from '../../assets/icons/tiktok.svg'
@@ -8,6 +8,7 @@ import MobileHeader from '../../components/MobileHeader/MobileHeader'
 import DesktopHeader from '../../components/DesktopHeader/DesktopHeader'
 import { useCurrentWidth } from '../../hooks/findWidth'
 import woodGrain from '../../assets/woodGrain-unsplash.jpg'
+import { Context } from "../../context/SideBarContext"
 import './Layout.css'
 
 
@@ -18,28 +19,9 @@ export const loader = ()=>{
 export const Layout = ()=> {
   const width = useCurrentWidth()
   const currentSection = useRef()
+  const {sideBarValue} = useContext(Context)
 
-  useEffect(()=>{
-    document.addEventListener('DOMContentLoaded', addObserver)
-
-    return ()=>{
-      document.removeEventListener('DOMContentLoaded', addObserver)
-    }
-  },[])
-
-  function addObserver(){
-    let options = {
-      root: document.querySelector("#root"),
-      rootMargin: '0px',
-      threshold:.01
-    }
   
-    let observer = new IntersectionObserver(handleObserver, options)
-    console.log(observer)
-    let target = document.querySelector("#AboutUs");
-  
-    observer.observe(target)
-  }
   
   const asideContainerStyles = {
       backgroundImage:`URL(${woodGrain})`,
@@ -47,17 +29,14 @@ export const Layout = ()=> {
       backgroundRepeat:'no-repeat'
   }
 
-  function handleObserver(){
-    console.log(`we have reached an observer`)
-  }
   
   return(
     <>    
       {width < 750 ? (<MobileHeader/>): (<DesktopHeader/>)}
-      <div id='content-container'>
+      <div id='content-container' ref={currentSection}>
         <div className='--layout-aside-container' style={asideContainerStyles}>
           <div className='--layout-aside-content-container flex flex-column'>
-            <h2 className='--layout-current-nav white center' ref={currentSection}>About Us</h2>   
+            <h2 className='--layout-current-nav white center' >{sideBarValue}</h2>   
             <div className='--layout-aside-social-container'>
               <ul className='--layout-aside-social-list flex flex-column flex-center flex-align-center'>
                 <Link><li><img className='social-icon fb' src={fbIcon} alt="facebook icon" /></li></Link>
@@ -73,7 +52,6 @@ export const Layout = ()=> {
           
         </div>   
       </div>
-      
     </>
   )
 }
