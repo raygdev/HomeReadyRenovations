@@ -1,11 +1,26 @@
+import { useRef, useContext, useEffect } from "react";
 import aboutUsImg from "../../assets/AboutUs-unsplash.jpg";
 import Lottie from "lottie-react";
 import measuringTape from "../../assets/measuringTape.json";
 import "./About.css";
+import { Context } from "../../context/SideBarContext";
+import useObserver from "../../hooks/useObserver";
 
 const AboutUs = () => {
+  const aboutUsRef = useRef(null);
+  const { setSideBarValue } = useContext(Context);
+  const isIntersecting = useObserver(aboutUsRef);
+
+  useEffect(() => {
+    isIntersecting ? setSideBarValue("About Us") : null;
+  }, [isIntersecting]);
+
   return (
-    <section id="AboutUs" className="--about-section-container">
+    <section
+      ref={aboutUsRef}
+      id="AboutUs"
+      className="--about-section-container"
+    >
       <img id="about-img" className="--about-img" src={aboutUsImg} alt="" />
       <div className="--about-text-container">
         <h2 className="--about-home-tag">
@@ -26,7 +41,8 @@ const AboutUs = () => {
           Expect Detailed <span>Renovations</span>
         </h2>
         <p className="--about-renovation-text black">
-          Our detailed renovations enhance your home's beauty and functionality.
+          Our detailed renovations enhance your home&apos;s beauty and
+          functionality.
         </p>
         <Lottie
           id="about-measure-img"

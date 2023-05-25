@@ -1,10 +1,21 @@
+import { useRef, useContext, useEffect } from "react";
 import Lottie from "lottie-react";
 import Home3D from "../../assets/home3d.json";
+import useObserver from "../../hooks/useObserver";
+import { Context } from "../../context/SideBarContext";
 import "./Jumbo.css";
 
 const Jumbo = () => {
+  const homeRef = useRef(null);
+  const isIntersecting = useObserver(homeRef);
+  const { setSideBarValue } = useContext(Context);
+
+  useEffect(() => {
+    isIntersecting ? setSideBarValue("Home") : null;
+  }, [isIntersecting]);
+
   return (
-    <section id="Home" className="--layout-jumbo-section">
+    <section ref={homeRef} id="Home" className="--layout-jumbo-section">
       <Lottie
         id="jumbo-anim"
         className="--layout-jumbo-anim"
