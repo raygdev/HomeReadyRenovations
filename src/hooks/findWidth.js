@@ -1,27 +1,28 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
-const getWidth = ()=> window.innerWidth 
-    || document.documentElement.clientWidth
-    || document.body.clientWidth;
+const getWidth = () =>
+  window.innerWidth ||
+  document.documentElement.clientWidth ||
+  document.body.clientWidth;
 
-function useCurrentWidth(){
-    let [width, setWidth] = useState(getWidth())
+function useCurrentWidth() {
+  let [width, setWidth] = useState(getWidth());
 
-    useEffect(()=>{
-        let timeoutId = null;
-        const resizeListener = ()=> {
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(()=> setWidth(getWidth()), 150)
-        }
+  useEffect(() => {
+    let timeoutId = null;
+    const resizeListener = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => setWidth(getWidth()), 150);
+    };
 
-        window.addEventListener('resize', resizeListener)
+    window.addEventListener("resize", resizeListener);
 
-        return()=>{
-            window.removeEventListener('resize', resizeListener)
-        }
-    }, [])
+    return () => {
+      window.removeEventListener("resize", resizeListener);
+    };
+  }, []);
 
-    return width;
+  return width;
 }
 
-export { useCurrentWidth}
+export { useCurrentWidth };
