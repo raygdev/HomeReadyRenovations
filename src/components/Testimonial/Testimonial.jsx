@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import useObserver from "../../hooks/useObserver";
 import { useSideBarDispatch } from "../../context/SideBarContext";
@@ -6,12 +6,10 @@ import "./Testimonial.css";
 
 const Testimonial = () => {
   const feedbackRef = useRef(null);
-  const isIntersecting = useObserver(feedbackRef);
   const setSideBarValue = useSideBarDispatch();
-
-  useEffect(() => {
-    isIntersecting ? setSideBarValue("Testimonials") : null;
-  }, [isIntersecting]);
+  useObserver(feedbackRef, (isIntersecting) => {
+    isIntersecting && setSideBarValue("Testimonials");
+  });
 
   return (
     <section

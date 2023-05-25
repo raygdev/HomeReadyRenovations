@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import aboutUsImg from "../../assets/AboutUs-unsplash.jpg";
 import Lottie from "lottie-react";
 import measuringTape from "../../assets/measuringTape.json";
@@ -9,11 +9,9 @@ import useObserver from "../../hooks/useObserver";
 const AboutUs = () => {
   const aboutUsRef = useRef(null);
   const setSideBarValue = useSideBarDispatch();
-  const isIntersecting = useObserver(aboutUsRef);
-
-  useEffect(() => {
-    isIntersecting ? setSideBarValue("About Us") : null;
-  }, [isIntersecting]);
+  useObserver(aboutUsRef, (isIntersecting) => {
+    isIntersecting && setSideBarValue("About Us");
+  });
 
   return (
     <section
