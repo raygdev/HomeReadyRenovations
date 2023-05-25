@@ -1,19 +1,10 @@
-import React, { useRef, useEffect, useContext } from 'react'
+import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
-import { Context } from "../../context/SideBarContext"
-import useObserver from '../../hooks/useObserver';
 import './Testimonial.css'
 
 const Testimonial = ()=>{
-    const feedbackRef = useRef(null)
-    const isIntersecting = useObserver(feedbackRef)
-    const { setSideBarValue } = useContext(Context)
-
-    useEffect(() => {
-        isIntersecting ? setSideBarValue("Testimonials"): null
-    },[isIntersecting])
     return(
-        <section ref={feedbackRef} id='Feedback' className='--testimonial-section-container '>
+        <section id='Feedback' className='--testimonial-section-container '>
             <h2 className='--testimonial-tagline black bold center'>Testimonials speak volumes. They fuel our passion for delivering exceptional home renovations.</h2>
             <div className='--testimonial-carousel-container'>
             <Carousel>

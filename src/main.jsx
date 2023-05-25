@@ -7,7 +7,6 @@ import Home from './pages/Home/Home'
 import Portfolio from './pages/Portfolio/Portfolio'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css'
-import SideBarContext from './context/SideBarContext'
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Layout />} loader={layoutLoader} errorElement={<Error />}>
@@ -20,8 +19,6 @@ const router = createBrowserRouter(createRoutesFromElements(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <SideBarContext>
-      <RouterProvider router={router}/>
-    </SideBarContext>
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )
