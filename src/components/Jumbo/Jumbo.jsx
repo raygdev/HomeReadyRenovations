@@ -1,14 +1,14 @@
-import { useRef, useContext, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import Lottie from "lottie-react";
 import Home3D from "../../assets/home3d.json";
 import useObserver from "../../hooks/useObserver";
-import { Context } from "../../context/SideBarContext";
+import { useSideBarDispatch } from "../../context/SideBarContext";
 import "./Jumbo.css";
 
 const Jumbo = () => {
   const homeRef = useRef(null);
   const isIntersecting = useObserver(homeRef);
-  const { setSideBarValue } = useContext(Context);
+  const setSideBarValue = useSideBarDispatch();
 
   useEffect(() => {
     isIntersecting ? setSideBarValue("Home") : null;

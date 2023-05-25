@@ -1,4 +1,4 @@
-import { useRef, useContext } from "react";
+import { useRef } from "react";
 import fbIcon from "../../assets/icons/facebook.svg";
 import instaIcon from "../../assets/icons/instagram.svg";
 import tiktokIcon from "../../assets/icons/tiktok.svg";
@@ -9,7 +9,7 @@ import DesktopHeader from "../../components/DesktopHeader/DesktopHeader";
 import { useCurrentWidth } from "../../hooks/findWidth";
 import woodGrain from "../../assets/woodGrain-unsplash.jpg";
 import "./Layout.css";
-import { Context } from "../../context/SideBarContext";
+import { useSideBarValue } from "../../context/SideBarContext";
 
 export const loader = () => {
   return null;
@@ -18,7 +18,7 @@ export const loader = () => {
 export const Layout = () => {
   const width = useCurrentWidth();
   const currentSection = useRef();
-  const { sideBarValue } = useContext(Context);
+  const sideBarValue = useSideBarValue();
 
   const asideContainerStyles = {
     backgroundImage: `URL(${woodGrain})`,

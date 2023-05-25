@@ -1,13 +1,13 @@
-import { useRef, useContext, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import useObserver from "../../hooks/useObserver";
-import { Context } from "../../context/SideBarContext";
+import { useSideBarDispatch } from "../../context/SideBarContext";
 import "./Testimonial.css";
 
 const Testimonial = () => {
   const feedbackRef = useRef(null);
   const isIntersecting = useObserver(feedbackRef);
-  const { setSideBarValue } = useContext(Context);
+  const setSideBarValue = useSideBarDispatch();
 
   useEffect(() => {
     isIntersecting ? setSideBarValue("Testimonials") : null;

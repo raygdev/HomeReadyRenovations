@@ -1,14 +1,14 @@
-import { useRef, useContext, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import aboutUsImg from "../../assets/AboutUs-unsplash.jpg";
 import Lottie from "lottie-react";
 import measuringTape from "../../assets/measuringTape.json";
 import "./About.css";
-import { Context } from "../../context/SideBarContext";
+import { useSideBarDispatch } from "../../context/SideBarContext";
 import useObserver from "../../hooks/useObserver";
 
 const AboutUs = () => {
   const aboutUsRef = useRef(null);
-  const { setSideBarValue } = useContext(Context);
+  const setSideBarValue = useSideBarDispatch();
   const isIntersecting = useObserver(aboutUsRef);
 
   useEffect(() => {
