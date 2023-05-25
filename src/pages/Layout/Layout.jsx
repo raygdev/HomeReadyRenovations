@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef, useContext } from "react";
 import fbIcon from "../../assets/icons/facebook.svg";
 import instaIcon from "../../assets/icons/instagram.svg";
 import tiktokIcon from "../../assets/icons/tiktok.svg";
@@ -9,6 +9,7 @@ import DesktopHeader from "../../components/DesktopHeader/DesktopHeader";
 import { useCurrentWidth } from "../../hooks/findWidth";
 import woodGrain from "../../assets/woodGrain-unsplash.jpg";
 import "./Layout.css";
+import { Context } from "../../context/SideBarContext";
 
 export const loader = () => {
   return null;
@@ -17,28 +18,7 @@ export const loader = () => {
 export const Layout = () => {
   const width = useCurrentWidth();
   const currentSection = useRef();
-
-  useEffect(() => {
-    document.addEventListener("DOMContentLoaded", addObserver);
-
-    return () => {
-      document.removeEventListener("DOMContentLoaded", addObserver);
-    };
-  }, []);
-
-  function addObserver() {
-    let options = {
-      root: document.querySelector("#root"),
-      rootMargin: "0px",
-      threshold: 0.01,
-    };
-
-    let observer = new IntersectionObserver(handleObserver, options);
-    console.log(observer);
-    let target = document.querySelector("#AboutUs");
-
-    observer.observe(target);
-  }
+  const { sideBarValue } = useContext(Context);
 
   const asideContainerStyles = {
     backgroundImage: `URL(${woodGrain})`,
@@ -46,21 +26,14 @@ export const Layout = () => {
     backgroundRepeat: "no-repeat",
   };
 
-  function handleObserver() {
-    console.log(`we have reached an observer`);
-  }
-
   return (
     <>
       {width < 750 ? <MobileHeader /> : <DesktopHeader />}
-      <div id="content-container">
+      <div id="content-container" ref={currentSection}>
         <div className="--layout-aside-container" style={asideContainerStyles}>
           <div className="--layout-aside-content-container flex flex-column">
-            <h2
-              className="--layout-current-nav white center"
-              ref={currentSection}
-            >
-              About Us
+            <h2 className="--layout-current-nav white center">
+              {sideBarValue}
             </h2>
             <div className="--layout-aside-social-container">
               <ul className="--layout-aside-social-list flex flex-column flex-center flex-align-center">
