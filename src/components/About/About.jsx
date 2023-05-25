@@ -1,24 +1,14 @@
-import { useRef } from "react";
 import aboutUsImg from "../../assets/AboutUs-unsplash.jpg";
 import Lottie from "lottie-react";
+import useSideBarObserver from "../../hooks/useSideBarObserver";
 import measuringTape from "../../assets/measuringTape.json";
 import "./About.css";
-import { useSideBarDispatch } from "../../context/SideBarContext";
-import useObserver from "../../hooks/useObserver";
 
 const AboutUs = () => {
-  const aboutUsRef = useRef(null);
-  const setSideBarValue = useSideBarDispatch();
-  useObserver(aboutUsRef, (isIntersecting) => {
-    isIntersecting && setSideBarValue("About Us");
-  });
+  const subscribe = useSideBarObserver("About Us");
 
   return (
-    <section
-      ref={aboutUsRef}
-      id="AboutUs"
-      className="--about-section-container"
-    >
+    <section ref={subscribe} id="AboutUs" className="--about-section-container">
       <img id="about-img" className="--about-img" src={aboutUsImg} alt="" />
       <div className="--about-text-container">
         <h2 className="--about-home-tag">

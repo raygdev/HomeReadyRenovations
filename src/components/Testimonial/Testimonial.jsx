@@ -1,19 +1,13 @@
-import { useRef } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import useObserver from "../../hooks/useObserver";
-import { useSideBarDispatch } from "../../context/SideBarContext";
+import useSideBarObserver from "../../hooks/useSideBarObserver";
 import "./Testimonial.css";
 
 const Testimonial = () => {
-  const feedbackRef = useRef(null);
-  const setSideBarValue = useSideBarDispatch();
-  useObserver(feedbackRef, (isIntersecting) => {
-    isIntersecting && setSideBarValue("Testimonials");
-  });
+  const subscribe = useSideBarObserver("Testimonials");
 
   return (
     <section
-      ref={feedbackRef}
+      ref={subscribe}
       id="Feedback"
       className="--testimonial-section-container "
     >
